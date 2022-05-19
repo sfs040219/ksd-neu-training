@@ -50,4 +50,10 @@ public class UserService {
     public int deleteUser(Long userId) {
         return this.userMapper.deleteByPrimaryKey(userId);
     }
+    public UserModel Update(UserModel userModel,Long uid) {
+        userModel.setPassword(this.passwordEncoder.encode(userModel.getPassword()));
+        userModel.setId(uid);
+        userMapper.insert(userModel);
+        return userModel;
+    }
 }

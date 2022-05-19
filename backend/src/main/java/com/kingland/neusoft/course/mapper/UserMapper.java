@@ -11,6 +11,7 @@ public interface UserMapper {
 
     int insert(UserModel record);
 
+
     int insertSelective(UserModel record);
 
     UserModel selectByPrimaryKey(Long id);
